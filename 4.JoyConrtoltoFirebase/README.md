@@ -17,6 +17,7 @@ Joystrick -> Webapp -> Firebase -> Touchdesigner
 - Get API configuration file : firebase -> Project settings -> Service Accounts
 
 **4.Touchdesigner**
+- 0.copy configuration file [config].json to %temp%\touchtmp
 - 1.(Do it once) TEXT DAT : initialize_app 
 - 2.Get data : doc.to_dict().get('key')
 
