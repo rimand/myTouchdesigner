@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+
+    <!-- Optional theme -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+      crossorigin="anonymous"
+    />
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-firestore.js"></script>
+
+    <script src="js/gamecontroller.min.js"></script>
+
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyDM5ZJbI8YLQuVfWriEscL2BKT-nSx4FF8",
+        authDomain: "gaphlab-3b455.firebaseapp.com",
+        databaseURL:
+          "https://gaphlab-3b455-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "gaphlab-3b455",
+        storageBucket: "gaphlab-3b455.appspot.com",
+        messagingSenderId: "398307036249",
+        appId: "1:398307036249:web:d7004e1807909e35cfb548",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      var db = firebase.firestore();
+
+      let btnUp = 0;
+      let btnDown = 0;
+      let btnLeft = 0;
+      let btnRight = 0;
+
+    </script>
+
+    <title>Document</title>
+
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body class="container" style="text-align: center">
+    <h1>JOY-Strick</h1>
+    <div style="margin-top: 100px"></div>
+    <div class="container h-100 d-flex justify-content-center">
+      <div class="jumbotron my-auto">
+        <h1 class="display-3" id="text1">Hello, world!</h1>
+      </div>
+    </div>
+
+    <script>
+      gameControl.on("connect", (gamepad) => {
+        gamepad.before("up", function () {
+          btnUp++;
+          console.log("btnUp : " + btnUp);
+          document.getElementById("text1").innerHTML = "up";
+
+          var update_  = db.collection("joy").doc("joy1");
+          return update_ 
+            .update({
+              btnUp: btnUp,
+            })
+            .then(() => {
+              console.log("Document successfully updated!");
+            })
+            .catch((error) => {
+              console.error("Error updating document: ", error);
+            });
+        });
+        gamepad.before("down", () => {
+          btnDown++;
+          console.log("down");
+          document.getElementById("text1").innerHTML = "down";
+
+          var update_  = db.collection("joy").doc("joy1");
+          return update_ 
+            .update({
+              btnDown: btnDown,
+            })
+            .then(() => {
+              console.log("Document successfully updated!");
+            })
+            .catch((error) => {
+              console.error("Error updating document: ", error);
+            });
+        });
+        gamepad.before("left", () => {
+          btnLeft++;
+          console.log("left");
+          document.getElementById("text1").innerHTML = "down";
+
+          var update_  = db.collection("joy").doc("joy1");
+          return update_ 
+            .update({
+              btnLeft: btnLeft,
+            })
+            .then(() => {
+              console.log("Document successfully updated!");
+            })
+            .catch((error) => {
+              console.error("Error updating document: ", error);
+            });
+        });
+        gamepad.before("right", () => {
+          btnRight++;
+          console.log("right");
+          document.getElementById("text1").innerHTML = "right";
+
+          var update_  = db.collection("joy").doc("joy1");
+          return update_ 
+            .update({
+              btnRight: btnRight,
+            })
+            .then(() => {
+              console.log("Document successfully updated!");
+            })
+            .catch((error) => {
+              console.error("Error updating document: ", error);
+            });
+        });
+        gamepad.before("start", () => {
+          console.log("start");
+          document.getElementById("text1").innerHTML = "start";
+        });
+        gamepad.before("select", () => {
+          console.log("select");
+          document.getElementById("text1").innerHTML = "select";
+        });
+        gamepad.before("l1", () => {
+          console.log("l1");
+          document.getElementById("text1").innerHTML = "l1";
+        });
+        gamepad.before("r1", () => {
+          console.log("r1");
+          document.getElementById("text1").innerHTML = "r1";
+        });
+        gamepad.before("button0", () => {
+          console.log("button0");
+          document.getElementById("text1").innerHTML = "button0";
+        });
+        gamepad.before("button1", () => {
+          console.log("button1");
+          document.getElementById("text1").innerHTML = "button1";
+        });
+        gamepad.before("button2", () => {
+          console.log("button2");
+          document.getElementById("text1").innerHTML = "button2";
+        });
+        gamepad.before("button3", () => {
+          console.log("button3");
+          document.getElementById("text1").innerHTML = "button3";
+        });
+      });
+
+      // gameControl
+      //   .on("afterCycle", function () {
+      //     const gp = gameControl.getGamepad(0).axeValues[0];
+      //     const gp2 = gameControl.getGamepad(0).axeValues[1];
+      //     const angle = Math.atan(gp[0] / gp[1]);
+      //     const varX = gp[0] >= 0 ? 1 : -1;
+      //     const varY = gp[1] >= 0 ? 1 : -1;
+      //     const x = varY * varX * gp[0] * 100 * Math.sin(angle) + 100;
+      //     const y = gp[1] * 100 * Math.cos(angle) + 100;
+      //     console.log(gp[0] + " px");
+      //     console.log(gp2[0] + " px");
+      //   })
+      //   .on("beforeCycle", function () {})
+      //   .on("connect", function (gamepad) {
+      //   });
+
+      document.getElementById("text1").innerHTML = "[Press] Something!";
+    </script>
+  </body>
+</html>
