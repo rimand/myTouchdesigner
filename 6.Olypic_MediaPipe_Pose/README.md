@@ -1,4 +1,4 @@
-# Pictogram_MediaPipe_Pose (Tokyo2020)
+# Touchdesigner_Pictogram_MediaPipe_Pose (Tokyo2020)
 
 1.Add external python in touchdesigner
 - Window path example "C:/Users/{username}/AppData/Local/Programs/Python/Python37/Lib/site-packages"
