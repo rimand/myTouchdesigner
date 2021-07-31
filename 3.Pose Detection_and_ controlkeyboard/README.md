@@ -7,7 +7,9 @@ MediaPipe Pose + pyautogui
   - pip install mediapipe
   - pip install pyautogui
 
-(img.shape)
+note:
+- len(results.pose_landmarks.landmark)
+- img.shape
  
 ![image](https://user-images.githubusercontent.com/17475338/125661696-704dbae8-a428-40b9-9acf-f709db3d0ea0.png)
 
