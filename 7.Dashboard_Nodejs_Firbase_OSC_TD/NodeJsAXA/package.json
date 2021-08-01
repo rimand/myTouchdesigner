@@ -1,0 +1,19 @@
+{
+  "name": "axanodefirebasetd",
+  "version": "8.7.0",
+  "description": "AXAnodeFirebaseTD",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "firebase": "^8.7.0",
+    "firebase-admin": "^9.10.0",
+    "osc-js": "^2.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"1231231231231232123123123123123123123145645647897456456456",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
